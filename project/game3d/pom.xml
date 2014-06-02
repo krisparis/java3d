@@ -13,13 +13,22 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
   <dependencies>
-	<dependency>
-		<groupId>java3d</groupId>
-		<artifactId>j3d-core</artifactId>
-		<version>1.3.1</version>
-	</dependency>
+  <dependency>
+	<groupId>java3d</groupId>
+	<artifactId>vecmath</artifactId>
+	<version>1.5.2</version>
+</dependency>
+  <dependency>
+	<groupId>java3d</groupId>
+	<artifactId>j3d-core</artifactId>
+	<version>1.5.2</version>
+</dependency>
+<dependency>
+	<groupId>java3d</groupId>
+	<artifactId>j3d-core-utils</artifactId>
+	<version>1.5.2</version>
+</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

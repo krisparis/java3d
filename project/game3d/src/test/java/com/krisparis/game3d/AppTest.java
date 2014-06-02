@@ -1,4 +1,4 @@
-package com.krisparis.3dgame;
+package com.krisparis.game3d;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
