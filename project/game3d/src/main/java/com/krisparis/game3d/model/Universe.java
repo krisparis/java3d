@@ -19,7 +19,7 @@ public class Universe {
 	
 	/**
 	 * <p>
-	 * The value of the strength of gravity in m/(s^2) as defined
+	 * The value of the gravity in m/(s^2) as defined
 	 * in US-1.
 	 * </p>
 	 */
