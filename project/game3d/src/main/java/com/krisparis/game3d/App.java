@@ -11,24 +11,24 @@ import javax.media.j3d.BranchGroup;
  * 
  */
 public class App {
-	public App() {
+    private App() {
 
-		SimpleUniverse universe = new SimpleUniverse();
+        SimpleUniverse universe = new SimpleUniverse();
 
-		BranchGroup group = new BranchGroup();
+        BranchGroup group = new BranchGroup();
 
-		group.addChild(new ColorCube(0.3));
+        group.addChild(new ColorCube(0.3));
 
-		universe.getViewingPlatform().setNominalViewingTransform();
+        universe.getViewingPlatform().setNominalViewingTransform();
 
-		universe.addBranchGraph(group);
-	}
+        universe.addBranchGraph(group);
+    }
 
 public static void main( String[] args ) {
 
    new App();
 
 }
-	
-	
+    
+    
 }
