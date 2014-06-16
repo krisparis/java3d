@@ -5,6 +5,10 @@
 > All commits pushed to the game3d repository must conform to that convention.
 
 The contens of this page are partly based on the angular commit messages document.
+This document can be accessed using the URL below:
+
+[https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit?pli=1](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit?pli=1 "Angular Git Commit Message Conventions")
+
 
 ## Purpose ##
 
