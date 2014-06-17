@@ -63,20 +63,20 @@ The subject line contains succinct description of the change.
 ##### Main types #####
 
 - **chore**(*build, release, ...*): Changes to the build process or auxiliary tools and libraries such as documentation generation. The updated file is the one which name is given in parenthesis
-  - *i.e :* `chore(build): FLA - add project compilation target`
+  - *e.g :* `chore(build): FLA - add project compilation target`
 - **feat**(*feature name*): Changes made for implementing the specified feature
-  - *i.e :* `feat(BALL VELOCITY): FLA - add method for computing the norm of the ball's velocity vector`
+  - *e.g :* `feat(BALL VELOCITY): FLA - add method for computing the norm of the ball's velocity vector`
 - **fix**(*feature name*): Changes made for fixing the specified feature
-  - *i.e :* `fix(BALL VELOCITY): FLA - fix the formula used for computing the norm of the ball`
+  - *e.g :* `fix(BALL VELOCITY): FLA - fix the formula used for computing the norm of the ball`
 - **test**(*feature name*): Changes made for implementing unit tests or test cases or test scenarios defined for the specified feature
-  - *i.e :* `test(BALL VELOCITY): FLA - implement test cases n° 1 to 5 of US-1`
+  - *e.g :* `test(BALL VELOCITY): FLA - implement test cases n° 1 to 5 of US-1`
 
 ##### Other types #####
 
 - **docs**(*document subject*): Documentation only changes. This does not includes changes of JAVADOC comments within JAVA source files
 - **improve**(*feature name*): A code change that improves performance for the specified feature
 - **refactor**(*file name*): Code changes in the specified file that neither fixes a bug or adds a feature. This includes JAVADOC refactoring
-- **style**(*file name*):: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- **style**(*file name*): Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
 
 
 ### Message body ###
