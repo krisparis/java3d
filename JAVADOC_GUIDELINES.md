@@ -190,7 +190,7 @@ Whenever possible, **start** the initial description of a class **with a verb**.
 
 Use the following pattern:
 
->****Represents** *&lt;an entity&gt;* **, providing** *&lt;summary of provided data&gt;*
+>**Represents** *&lt;an entity&gt;* **, providing** *&lt;summary of provided data&gt;*
 
 Here is an example from `User.java`:<br/>
 *Represents an user, providing access to the user's contact
