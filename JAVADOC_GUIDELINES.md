@@ -3,7 +3,7 @@
 - [Format of a Javadoc comment](#format_section)
  - [General structure](#generalstructure_subsection)
  - [Use of space characters](#usespace_subsection)
- - [Use <code\\> for keywords and names](#usecode_subsection)
+ - [Use &lt;code&gt; for keywords and names](#usecode_subsection)
  - [Use of tags](#usetags_subsection) 
 - [Writting descriptions](#description_section)
  - [Main recommandations](#mainrecommandations_section)
@@ -19,14 +19,14 @@ Below is the general structure a Javadoc comment should follow.
 
 > /**<br/>
 > First paragraph.<br/>
-> <p\>Additional paragraph 1.</p\> <br/>
-> <p\>Additional paragraph 2.</p\> <br/>
-> <i><List description line\>:</i> <br/>
-> <ul\> <br/>
-> &nbsp;&nbsp;<li\>List item 1</li\> <br/>
-> &nbsp;&nbsp;<li\>List item 2</li\> <br/>
-> <ul\> <br/>
-> <BLANK LINE\> <br/>
+> &lt;p&gt;Additional paragraph 1.&lt;&#47;p&gt; <br/>
+> &lt;p&gt;Additional paragraph 2.&lt;&#47;p&gt; <br/>
+> <i>&lt;List description line&gt;:</i> <br/>
+> &lt;ul&gt; <br/>
+> &nbsp;&nbsp;&lt;li&gt;List item 1&lt;&#47;li&gt; <br/>
+> &nbsp;&nbsp;&lt;li&gt;List item 2&lt;&#47;li&gt; <br/>
+> &lt;&#47;ul&gt; <br/>
+> &lt;BLANK LINE&gt; <br/>
 > @param paramName paramDescrption<br/>
 > */
 
@@ -35,9 +35,9 @@ Below is the general structure a Javadoc comment should follow.
 - **Never use tabulation characters!**
 - Never leave blank lines at the beginning or end of the comment.
 - Leave one blank line between paragraphs, lists, and between the last paragraph in the description and the first Javadoc tag (`@author` for instance).
-- Use two space characters to indent list items. (**<li\> </li\>**)
+- Use two space characters to indent list items. (**&lt;li&gt; &lt;&#47;li&gt;**)
 
-### Use <code\> for keywords and names <a id="#usecode_subsection"></a> ###
+### Use &ltcode&gt; for keywords and names <a id="#usecode_subsection"></a> ###
 
 Keywords and names are offset by <code>...</code> when mentioned in a description. This includes:
 
@@ -163,7 +163,7 @@ For example, ArrayList has two add methods: `add(Object)` and `add(int, Object)`
 - Ideally, make it complete enough for conforming implementors. Realistically, include enough description so that someone reading the source code can write a substantial suite of conformance tests. Basically, the spec should be complete, including boundary conditions, parameter ranges and corner cases.
 - Where appropriate, mention what the specification leaves unspecified or allows to vary among implementations.
 - If you must document implementation-specific behavior, please document it **in a separate paragraph**  with a lead-in phrase that makes it clear it is implementation-specific.
--  **If the implementation varies according to platform**, then specify **"On <platform\>"** at the start of the paragraph.
+-  **If the implementation varies according to platform**, then specify **"On &lt;platform&gt;"** at the start of the paragraph.
 -  In other cases that might **vary with implementations on a platform** you might use the lead-in phrase **"Implementation-Specific:"**
 
  Here is an example of an implementation-dependent part of the specification for `java.lang.Runtime`:
@@ -181,7 +181,7 @@ Whenever possible, **start** the initial description of a class **with a verb**.
 
 Use the following pattern:
 
->****Represents** *<an entity\>* **, providing** *<summary of provided data\>*
+>****Represents** *&lt;an entity&gt;* **, providing** *&lt;summary of provided data&gt;*
 
 Here is an example from `User.java`:<br/>
 *Represents an user, providing access to the user's contact
@@ -192,11 +192,11 @@ timezone, and more.*
 
 Use the following pattern for model interfaces:
 
->**Provides the model interface for** *<an entity\>*. **Represents** *<an entity\>* **, providing** *<summary of provided data\>*
+>**Provides the model interface for** *&lt;an entity&gt;*. **Represents** *&lt;an entity&gt;* **, providing** *&lt;summary of provided data&gt;*
 
 Use the following pattern for model interface implementations:
 
->**Provides the model implementation for** *<an entity\>*. **Represents** *<an entity\>* **, providing** *<summary of provided data\>*
+>**Provides the model implementation for** *&lt;an entity&gt;*. **Represents** *&lt;an entity&gt;* **, providing** *&lt;summary of provided data&gt;*
 
 Below is an example from `Model.java `:<br/>
 *Provides the model interface for the User service. Represents an User, providing access to the user's contact
@@ -207,7 +207,7 @@ timezone, and more.*
 
 Use the following pattern:
 
->**Provides the (local/remote) service for** *<summary of methods using actions ending in “ing”\>*.
+>**Provides the (local/remote) service for** *&lt;summary of methods using actions ending in “ing”&gt;*.
 
 Below is an example from `DLAppLocalServiceImpl` :<br/>
 *Provides the local service for accessing, adding, deleting, moving,
@@ -220,7 +220,7 @@ than through the individual document library service classes.*
 
 Use the following pattern:
 
->**Provides utility methods for** *<summary of methods using actions ending in “ing”\>*
+>**Provides utility methods for** *&lt;summary of methods using actions ending in “ing”&gt;*
 
 - Action verbs shoud be listed in **alphabetical order**
 - Verbs can be derivated from the class' method names.
@@ -232,13 +232,13 @@ Below is an example for `Localization` interface:<br/>
 
 - Whenever possible, **start** a method description **with a verb**.
 - When referring to parameters, use "the" instead of "a". Example: "Returns the localized preferences value for the key."
-- When mentionning the name of a method argument use "the *<paramName\>* argument".
+- When mentionning the name of a method argument use "the *&lt;paramName&gt;* argument".
 
 #### Initial method descriptions ####
 
 ##### Constructor #####
 
-- constructor(value): **Constructs a new** *<entity\>*... with the value.
+- constructor(value): **Constructs a new** *&lt;entity&gt;\>*... with the value.
 
 ##### Methods returning values #####
 
@@ -248,21 +248,21 @@ Below is an example for `Localization` interface:<br/>
 
 - getSomething(): **Returns the** *something* of this thing.
 - getSomethings(): **Returns all the** *something**s*** of this thing. (Note, do not refer to collection type; instead, refer to the something in plural form.)
-- getSomething(<field1\>): **Returns the** *something* of this thing **with the** <field1\>.
-- getSomething(<field1\>,...,<fieldN\>): **Returns the** *something* of this thing **matching the** <field1\>, ... and <fieldN\>.
-- isSomething(): **Returns <code\>true</code\> if** this thing is *something*.
+- getSomething(&lt;field1&gt;): **Returns the** *something* of this thing **with the** &lt;field1&gt;.
+- getSomething(&lt;field1&gt;,...,&lt;fieldN&gt;): **Returns the** *something* of this thing **matching the** &lt;field1&gt;, ... and &lt;fieldN&gt;.
+- isSomething(): **Returns &ltcode&gt;true&lt&#47;code&gt; if** this thing is *something*.
 
 In case of methods returning:
 
-- a **count:** Use the following pattern: **Returns the number of** *<something>* of this thing
-- an **ordered collection;** add a phrase following the pattern "**ordered by** *<order criteria\>*"
+- a **count:** Use the following pattern: **Returns the number of** *something* of this thing
+- an **ordered collection;** add a phrase following the pattern "**ordered by** *order criteria*"
 
 Examples: 
 
 > Returns the name of this user. <br/>
 > Returns all the adresses of this user. <br/>
 > Returns the number of organizations this user belongs to and matching the type, region, and country <br/>
-> Returns <code\>true</code\> if this user is registered. <br/>
+> Returns &ltcode&gt;true&lt&#47;code&gt; if this user is registered. <br/>
 
 
 ##### Method updating entities #####
@@ -377,7 +377,7 @@ Examples:
 > the name of this user. <br/>
 > all the adresses of this user. <br/>
 > the number of organizations this user belongs to and matching the type, region, and country <br/>
-> <code\>true</code\> if this user is registered, <code\>false</code\> otherwise. <br/>
+> &ltcode&gt;true&lt&#47;code&gt; if this user is registered, &ltcode&gt;false&lt&#47;code&gt; otherwise. <br/>
 
 #### Try to avoid simply restating the name of the method in the description ####
 
@@ -430,13 +430,13 @@ Here are two examples:
 >  * Returns all immediate subfolders of the parent folder. <br/>
 >  * ... <br/>
 >  */ <br/>
-> public List<FoldergetFolders(long repositoryId, long parentFolderId) <br/>
+> public List&lt;FoldergetFolders&Gt;(long repositoryId, long parentFolderId) <br/>
 
 > /**<br/>
 >  * Returns all immediate subfolders of the parent folder, optionally <br/>
 >  * including mount folders for third-party repositories. <br/>
 >  * .... <br/>
 >  */ <br/>
-> public List<FoldergetFolders(long repositoryId, long parentFolderId, boolean includeMountFolders) <br/>
+> public List&lt;FoldergetFolders&gt;(long repositoryId, long parentFolderId, boolean includeMountFolders) <br/>
 
 
