@@ -1,24 +1,23 @@
 # Javadoc Guidelines #
 <a id="#title"> </a>
 
-- [Format of a Javadoc comment](#format)
- - [General structure](#generalstructure)
- - [Use of space characters](#usespace)
- - [Use &lt;code&gt; for keywords and names](#usecode)
- - [Use of tags](#usetags) 
-- [Writting descriptions](#writtingdescriptions)
- - [Main recommandations](#mainrecommandations)
- - [Class Description](#classdescription) 
- - [Method Description](#methoddescription)
+- [Format of a Javadoc comment](#format-of-a-javadoc-comment)
+ - [General structure](#general-structure)
+ - [Use of space characters](#use-of-space-characters)
+ - [Use &lt;code&gt; for keywords and names](#use-code-for-keywords-and-names)
+ - [Use of tags](#use-of-tags) 
+- [Writing descriptions](#writing-descriptions)
+ - [General Guidelines](#general-guidelines)
+ - [Class Description](#class-description) 
+ - [Method Description](#method-description)
 
 
-## Format of a Javadoc comment 
-<a name="#format"></a>
+## Format of a Javadoc comment <a name="#format-of-a-javadoc-comment"></a>
 
 <a href="#title">Back to top</a>
 
 ### General structure 
-<a name="#generalstructure"></a>
+<a name="#general-structure"></a>
 
 Below is the general structure a Javadoc comment should follow.
 
@@ -35,16 +34,14 @@ Below is the general structure a Javadoc comment should follow.
 > @param paramName paramDescrption<br/>
 > */
 
-### Use of space characters 
-<a name="#usespace"></a>
+### Use of space characters <a name="#use-of-space-characters"></a>
 
 - **Never use tabulation characters!**
 - Never leave blank lines at the beginning or end of the comment.
 - Leave one blank line between paragraphs, lists, and between the last paragraph in the description and the first Javadoc tag (`@author` for instance).
 - Use two space characters to indent list items. (**&lt;li&gt; &lt;&#47;li&gt;**)
 
-### Use &lt;code&gt; for keywords and names 
-<a name="#usecode"></a>
+### Use &lt;code&gt; for keywords and names <a name="#use-code-for-keywords-and-names"></a>
 
 Keywords and names are offset by &lt;code&gt;...&lt;&#47;code&gt; when mentioned in a description. This includes:
 
@@ -58,7 +55,7 @@ Keywords and names are offset by &lt;code&gt;...&lt;&#47;code&gt; when mentioned
 - code examples
 
 ### Use of tags 
-<a name="#usetags"></a>
+<a name="#use-of-tags"></a>
 
 #### Order of tags ####
 
@@ -108,13 +105,11 @@ An **@param** tag is "required" (by convention) for every parameter, even when t
 
 These principles expedite automated searches and automated processing. Frequently, too, the effort to avoid redundancy pays off in extra clarity.
 
-## Writting descriptions 
-<a name="#writtingdescriptions"></a>
+## Writing descriptions <a name="#writing-descriptions"></a>
 
 [Back to top](#title)
 
-### Main recommandations 
-<a name="#mainrecommandations"></a>
+### General Guidelines <a name="#general-guidelines"></a>
 
 #### Use 3rd person (descriptive) not 2nd person (prescriptive). ####
 The description is in 3rd person declarative rather than 2nd person imperative.
@@ -181,8 +176,7 @@ For example, ArrayList has two add methods: `add(Object)` and `add(int, Object)`
 *On Windows systems, the path search behavior of the loadLibrary method is identical to that of the Windows API's LoadLibrary procedure*
 
 
-### Class description 
-<a name="#classdescription"></a>
+### Class description <a name="#class-description"></a>
 
 [Back to top](#title)
 
@@ -239,8 +233,7 @@ Use the following pattern:
 Below is an example for `Localization` interface:<br/>
 *Provides utility methods for updating localizations from JSON, maps and portlet requests.*
 
-### Method description 
-<a name="#methoddescription"></a>
+### Method description <a name="#method-description"></a>
 
 [Back to top](#title)
 
