@@ -1,5 +1,5 @@
 # Javadoc Guidelines #
-<a id="#title"> </a>
+<a id="#javadoc-guidelines"> </a>
 
 - [Format of a Javadoc comment](#format-of-a-javadoc-comment)
  - [General structure](#general-structure)
@@ -14,7 +14,7 @@
 
 ## Format of a Javadoc comment <a name="#format-of-a-javadoc-comment"></a>
 
-<a href="#title">Back to top</a>
+[Back to top](#javadoc-guidelines)
 
 ### General structure 
 <a name="#general-structure"></a>
@@ -34,7 +34,8 @@ Below is the general structure a Javadoc comment should follow.
 > @param paramName paramDescrption<br/>
 > */
 
-### Use of space characters <a name="#use-of-space-characters"></a>
+### Use of space characters
+<a name="#use-of-space-characters"></a>
 
 - **Never use tabulation characters!**
 - Never leave blank lines at the beginning or end of the comment.
@@ -107,9 +108,10 @@ These principles expedite automated searches and automated processing. Frequentl
 
 ## Writing descriptions <a name="#writing-descriptions"></a>
 
-[Back to top](#title)
+[Back to top](#javadoc-guidelines)
 
-### General Guidelines <a name="#general-guidelines"></a>
+### General Guidelines
+<a name="#general-guidelines"></a>
 
 #### Use 3rd person (descriptive) not 2nd person (prescriptive). ####
 The description is in 3rd person declarative rather than 2nd person imperative.
@@ -176,9 +178,10 @@ For example, ArrayList has two add methods: `add(Object)` and `add(int, Object)`
 *On Windows systems, the path search behavior of the loadLibrary method is identical to that of the Windows API's LoadLibrary procedure*
 
 
-### Class description <a name="#class-description"></a>
+### Class description
+<a name="#class-description"></a>
 
-[Back to top](#title)
+[Back to top](#javadoc-guidelines)
 
 Whenever possible, **start** the initial description of a class **with a verb**.
 
@@ -233,9 +236,10 @@ Use the following pattern:
 Below is an example for `Localization` interface:<br/>
 *Provides utility methods for updating localizations from JSON, maps and portlet requests.*
 
-### Method description <a name="#method-description"></a>
+### Method description
+<a name="#method-description"></a>
 
-[Back to top](#title)
+[Back to top](#javadoc-guidelines)
 
 - Whenever possible, **start** a method description **with a verb**.
 - When referring to parameters, use "the" instead of "a". Example: "Returns the localized preferences value for the key."
