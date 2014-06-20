@@ -39,7 +39,7 @@ Below is the general structure a Javadoc comment should follow.
 
 ### Use &lt;code&gt; for keywords and names <a id="#usecode_subsection"></a> ###
 
-Keywords and names are offset by <code>...</code> when mentioned in a description. This includes:
+Keywords and names are offset by &lt;code&gt;...&lt;&#47;code&gt; when mentioned in a description. This includes:
 
 - Java keywords
 - package names
