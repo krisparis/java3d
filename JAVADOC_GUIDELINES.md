@@ -1,14 +1,14 @@
 # Javadoc Guidelines <a id="#title"></a>#
 
-- [Format of a Javadoc comment](#format_section)
- - [General structure](#generalstructure_subsection)
- - [Use of space characters](#usespace_subsection)
- - [Use &lt;code&gt; for keywords and names](#usecode_subsection)
- - [Use of tags](#usetags_subsection) 
-- [Writting descriptions](#description_section)
- - [Main recommandations](#mainrecommandations_section)
- - [Class Description](#classdescription_section) 
- - [Method Description](#methoddescription_section)
+- [Format of a Javadoc comment](#format_section-)
+ - [General structure](#generalstructure_subsection-)
+ - [Use of space characters](#usespace_subsection-)
+ - [Use &lt;code&gt; for keywords and names](#usecode_subsection-)
+ - [Use of tags](#usetags_subsection-) 
+- [Writting descriptions](#description_section-)
+ - [Main recommandations](#mainrecommandations_section-)
+ - [Class Description](#classdescription_section-) 
+ - [Method Description](#methoddescription_section-)
 
 
 ## Format of a Javadoc comment <a id="#format_section"></a> ##
