@@ -12,7 +12,7 @@ This document can be accessed using the URL below:
 
 ## Purpose ##
 
-The commit message is what is what describes your contribution. Its purpose must therefore be to document what a commit contributes to a project.
+The commit message is what describes your contribution. Its purpose must therefore be to document what a commit contributes to a project.
 
 Its head line **should** be as meaningful as possible because it is always seen along with other commit messages.
 
