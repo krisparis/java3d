@@ -107,7 +107,7 @@ An **@param** tag is "required" (by convention) for every parameter, even when t
 These principles expedite automated searches and automated processing. Frequently, too, the effort to avoid redundancy pays off in extra clarity.
 
 ## Writting descriptions 
-<a name="#writtingdescriptions"></a> ##
+<a name="#writtingdescriptions"></a>
 
 [Back to top](#title)
 
@@ -238,7 +238,7 @@ Below is an example for `Localization` interface:<br/>
 *Provides utility methods for updating localizations from JSON, maps and portlet requests.*
 
 ### Method description 
-<a name="#methoddescription"></a> ###
+<a name="#methoddescription"></a>
 
 [Back to top](#title)
 
