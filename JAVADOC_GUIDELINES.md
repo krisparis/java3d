@@ -42,7 +42,8 @@ Below is the general structure a Javadoc comment should follow.
 - Leave one blank line between paragraphs, lists, and between the last paragraph in the description and the first Javadoc tag (`@author` for instance).
 - Use two space characters to indent list items. (**&lt;li&gt; &lt;&#47;li&gt;**)
 
-### Use &lt;code&gt; for keywords and names <a name="#use-code-for-keywords-and-names"></a>
+### Use &lt;code&gt; for keywords and names
+<a name="#use-code-for-keywords-and-names"></a>
 
 Keywords and names are offset by &lt;code&gt;...&lt;&#47;code&gt; when mentioned in a description. This includes:
 
