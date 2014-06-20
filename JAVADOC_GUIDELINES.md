@@ -1,5 +1,5 @@
 # Javadoc Guidelines #
-<a name="#title"></a>
+<a id="#title"> </a>
 
 - [Format of a Javadoc comment](#format)
  - [General structure](#generalstructure)
@@ -14,6 +14,8 @@
 
 ## Format of a Javadoc comment 
 <a name="#format"></a>
+
+<a href="#title">Back to top</a>
 
 ### General structure 
 <a name="#generalstructure"></a>
