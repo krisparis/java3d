@@ -11,9 +11,9 @@
  - [Method Description](#methoddescription_section)
 
 
-## Format of a Javadoc comment <a name="#format_section"></a> ##
+## Format of a Javadoc comment <a name="#format_section"></a>
 
-### General structure <a name="#generalstructure_subsection"></a> ###
+### General structure <a name="#generalstructure_subsection"></a>
 
 Below is the general structure a Javadoc comment should follow.
 
@@ -30,14 +30,14 @@ Below is the general structure a Javadoc comment should follow.
 > @param paramName paramDescrption<br/>
 > */
 
-### Use of space characters <a name="#usespace_subsection"></a> ###
+### Use of space characters <a name="#usespace_subsection"></a>
 
 - **Never use tabulation characters!**
 - Never leave blank lines at the beginning or end of the comment.
 - Leave one blank line between paragraphs, lists, and between the last paragraph in the description and the first Javadoc tag (`@author` for instance).
 - Use two space characters to indent list items. (**&lt;li&gt; &lt;&#47;li&gt;**)
 
-### Use &lt;code&gt; for keywords and names <a name="#usecode_subsection"></a> ###
+### Use &lt;code&gt; for keywords and names <a name="#usecode_subsection"></a>
 
 Keywords and names are offset by &lt;code&gt;...&lt;&#47;code&gt; when mentioned in a description. This includes:
 
@@ -50,7 +50,7 @@ Keywords and names are offset by &lt;code&gt;...&lt;&#47;code&gt; when mentioned
 - argument names
 - code examples
 
-### Use of tags <a name="#usetags_subsection"></a> ###
+### Use of tags <a name="#usetags_subsection"></a>
 
 #### Order of tags ####
 
@@ -104,7 +104,7 @@ These principles expedite automated searches and automated processing. Frequentl
 
 [Back to top](#title)
 
-### Main recommandations <a name="#mainrecommandations_section"></a> ###
+### Main recommandations <a name="#mainrecommandations_section"></a>
 
 #### Use 3rd person (descriptive) not 2nd person (prescriptive). ####
 The description is in 3rd person declarative rather than 2nd person imperative.
@@ -171,7 +171,7 @@ For example, ArrayList has two add methods: `add(Object)` and `add(int, Object)`
 *On Windows systems, the path search behavior of the loadLibrary method is identical to that of the Windows API's LoadLibrary procedure*
 
 
-### Class description <a name="#classdescription_section"></a> ###
+### Class description <a name="#classdescription_section"></a>
 
 [Back to top](#title)
 
