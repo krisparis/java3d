@@ -11,12 +11,12 @@ Physics engine
 
 - during a free fall
 - after a throw with initial velocity
-- after a rebond on a surface. 
+- after a rebond on a surface 
 - taking into account the friction force on a surface
 - taking into account the angular velocity of the ball
 
 
-**So that** the 3d game will use the implemented engine for simulating realistic ball motion.
+**So that** the 3d game will use the implemented engine for simulating realistic ball motion
  
 
 ## Acceptance criteria:
