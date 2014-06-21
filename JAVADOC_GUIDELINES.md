@@ -21,18 +21,18 @@
 
 Below is the general structure a Javadoc comment should follow.
 
-> &#47&#42&#42<br/>
+> &#47;&#42;&#42;<br/>
 > First paragraph.<br/>
-> &lt;p&gt;Additional paragraph 1.&lt;&#47;p&gt; <br/>
-> &lt;p&gt;Additional paragraph 2.&lt;&#47;p&gt; <br/>
+> &lt;p&gt;Additional paragraph 1.&lt;&#47;;p&gt; <br/>
+> &lt;p&gt;Additional paragraph 2.&lt;&#47;;p&gt; <br/>
 > <i>&lt;List description line&gt;:</i> <br/>
 > &lt;ul&gt; <br/>
-> &nbsp;&nbsp;&lt;li&gt;List item 1&lt;&#47;li&gt; <br/>
-> &nbsp;&nbsp;&lt;li&gt;List item 2&lt;&#47;li&gt; <br/>
-> &lt;&#47;ul&gt; <br/>
+> &nbsp;&nbsp;&lt;li&gt;List item 1&lt;&#47;;li&gt; <br/>
+> &nbsp;&nbsp;&lt;li&gt;List item 2&lt;&#47;;li&gt; <br/>
+> &lt;&#47;;ul&gt; <br/>
 > &lt;BLANK LINE&gt; <br/>
 > @param paramName paramDescrption<br/>
-> &#42&#42
+> &#42;&#42;
 
 ### Use of space characters
 <a name="#use-of-space-characters"></a>
@@ -40,12 +40,12 @@ Below is the general structure a Javadoc comment should follow.
 - **Never use tabulation characters!**
 - Never leave blank lines at the beginning or end of the comment.
 - Leave one blank line between paragraphs, lists, and between the last paragraph in the description and the first Javadoc tag (`@author` for instance).
-- Use two space characters to indent list items. (**&lt;li&gt; &lt;&#47;li&gt;**)
+- Use two space characters to indent list items. (**&lt;li&gt; &lt;&#47;;li&gt;**)
 
 ### Use &lt;code&gt; for keywords and names
 <a name="#use-code-for-keywords-and-names"></a>
 
-Keywords and names are offset by &lt;code&gt;...&lt;&#47;code&gt; when mentioned in a description. This includes:
+Keywords and names are offset by &lt;code&gt;...&lt;&#47;;code&gt; when mentioned in a description. This includes:
 
 - Java keywords
 - package names
@@ -260,7 +260,7 @@ Below is an example for `Localization` interface:<br/>
 - getSomethings(): **Returns all the** *something**s*** of this thing. (Note, do not refer to collection type; instead, refer to the something in plural form.)
 - getSomething(&lt;field1&gt;): **Returns the** *something* of this thing **with the** &lt;field1&gt;.
 - getSomething(&lt;field1&gt;,...,&lt;fieldN&gt;): **Returns the** *something* of this thing **matching the** &lt;field1&gt;, ... and &lt;fieldN&gt;.
-- isSomething(): **Returns &ltcode&gt;true&lt&#47;code&gt; if** this thing is *something*.
+- isSomething(): **Returns &ltcode&gt;true&lt&#47;;code&gt; if** this thing is *something*.
 
 In case of methods returning:
 
@@ -272,7 +272,7 @@ Examples:
 > Returns the name of this user. <br/>
 > Returns all the adresses of this user. <br/>
 > Returns the number of organizations this user belongs to and matching the type, region, and country <br/>
-> Returns &ltcode&gt;true&lt&#47;code&gt; if this user is registered. <br/>
+> Returns &ltcode&gt;true&lt&#47;;code&gt; if this user is registered. <br/>
 
 
 ##### Method updating entities #####
@@ -387,7 +387,7 @@ Examples:
 > the name of this user. <br/>
 > all the adresses of this user. <br/>
 > the number of organizations this user belongs to and matching the type, region, and country <br/>
-> &ltcode&gt;true&lt&#47;code&gt; if this user is registered, &ltcode&gt;false&lt&#47;code&gt; otherwise. <br/>
+> &ltcode&gt;true&lt&#47;;code&gt; if this user is registered, &ltcode&gt;false&lt&#47;;code&gt; otherwise. <br/>
 
 #### Try to avoid simply restating the name of the method in the description ####
 
@@ -395,38 +395,38 @@ In some cases, such as with getters/setters, this is fine, but if it is not imme
 
 **Avoid** - The description below says nothing beyond what you know from reading the method name. The words "set", "tool", "tip", and "text" are simply repeated in a sentence.
 
-> &#47&#42&#42<br/>
->  &#42 Sets the tool tip text.<br/>
->  &#42<br/>
->  &#42 @param text  the text of the tool tip <br/>
->  &#42&#47 <br/>
+> &#47;&#42;&#42;<br/>
+>  &#42; Sets the tool tip text.<br/>
+>  &#42;<br/>
+>  &#42; @param text  the text of the tool tip <br/>
+>  &#42;&#47; <br/>
 >  public void setToolTipText(String text) {
 
 **Preferred** - This description more completely defines what a tool tip is, in the larger context of registering and being displayed in response to the cursor.
 
-> &#47&#42&#42 <br/>
->  &#42 Registers the text to display in a tool tip.   The text <br/> 
->  &#42 displays when the cursor lingers over the component. <br/>
->  &#42 <br/>
->  &#42 @param text  the string to display.  If the text is null, <br/> 
->  &#42 the tool tip is turned off for this component. <br/>
->  &#42&#47<br/>
+> &#47;&#42;&#42; <br/>
+>  &#42; Registers the text to display in a tool tip.   The text <br/> 
+>  &#42; displays when the cursor lingers over the component. <br/>
+>  &#42; <br/>
+>  &#42; @param text  the string to display.  If the text is null, <br/> 
+>  &#42; the tool tip is turned off for this component. <br/>
+>  &#42;&#47;<br/>
 > public void setToolTipText(String text) {
 
 
 #### Distinguish between constructors ####
 
 Here are two examples:
->    &#47&#42&#42 <br/>
->     &#42 Constructs a new foo. <br/>
->     &#42/ <br/>
+>    &#47;&#42;&#42; <br/>
+>     &#42; Constructs a new foo. <br/>
+>     &#42;/ <br/>
 >    Foo() { <br/>
 >      ... <br/>
 
  and   
->    &#47&#42&#42 <br/>
->     &#42 Constructs a new foo with the number of objects to create. <br/>
->     &#42&#47 <br/>
+>    &#47;&#42;&#42; <br/>
+>     &#42; Constructs a new foo with the number of objects to create. <br/>
+>     &#42;&#47; <br/>
 >    Foo(int n) { <br/>
 
 
@@ -436,17 +436,17 @@ Here are two examples:
 
 - Remember, only the first sentence of the method description shows in the method summary. The remaining sentences (including sentences of the same paragraph following the first sentence) are available in the full length method description.
 
-> &#47&#42&#42 <br/>
->  &#42 Returns all immediate subfolders of the parent folder. <br/>
->  &#42 ... <br/>
->  &#42&#47 <br/>
+> &#47;&#42;&#42; <br/>
+>  &#42; Returns all immediate subfolders of the parent folder. <br/>
+>  &#42; ... <br/>
+>  &#42;&#47; <br/>
 > public List&lt;FoldergetFolders&Gt;(long repositoryId, long parentFolderId) <br/>
 
-> &#47&#42&#42<br/>
->  &#42 Returns all immediate subfolders of the parent folder, optionally <br/>
->  &#42 including mount folders for third-party repositories. <br/>
->  &#42 .... <br/>
->  &#42&#47 <br/>
+> &#47;&#42;&#42;<br/>
+>  &#42; Returns all immediate subfolders of the parent folder, optionally <br/>
+>  &#42; including mount folders for third-party repositories. <br/>
+>  &#42; .... <br/>
+>  &#42;&#47; <br/>
 > public List&lt;FoldergetFolders&gt;(long repositoryId, long parentFolderId, boolean includeMountFolders) <br/>
 
 
