@@ -44,7 +44,7 @@ Let **W** denote the weight force.
 
 - W = m x g, where **g** is the standard gravity, which value is 9.81 m/(s)^2
 - Since *Fe = W*, we have : 
- - *m **x** <span style="color:red">`A`</span> = m x g* and
+ - m **x** <span style="color:red">`A`</span> = m **x** g and
  -  <span style="color:red">`A`</span> = g = 9.81 m/(s)^2
 
 
