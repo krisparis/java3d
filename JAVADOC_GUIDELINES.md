@@ -388,7 +388,7 @@ Examples:
 > the name of this user. <br/>
 > all the adresses of this user. <br/>
 > the number of organizations this user belongs to and matching the type, region, and country <br/>
-> &ltcode&gt;true&lt&#47;;code&gt; if this user is registered, &ltcode&gt;false&lt&#47;;code&gt; otherwise. <br/>
+> &lt;code&gt;true&lt;&#47;code&gt; if this user is registered, &lt;code&gt;false&lt;&#47;code&gt; otherwise. <br/>
 
 #### Try to avoid simply restating the name of the method in the description ####
 
