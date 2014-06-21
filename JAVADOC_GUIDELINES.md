@@ -107,7 +107,8 @@ An **@param** tag is "required" (by convention) for every parameter, even when t
 
 These principles expedite automated searches and automated processing. Frequently, too, the effort to avoid redundancy pays off in extra clarity.
 
-## Writing descriptions <a name="#writing-descriptions"></a>
+## Writing descriptions
+<a name="#writing-descriptions"></a>
 
 [Back to top](#javadoc-guidelines)
 
