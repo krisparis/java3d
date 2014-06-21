@@ -21,7 +21,7 @@
 
 Below is the general structure a Javadoc comment should follow.
 
-> /**<br/>
+> &#47&#42&#42<br/>
 > First paragraph.<br/>
 > &lt;p&gt;Additional paragraph 1.&lt;&#47;p&gt; <br/>
 > &lt;p&gt;Additional paragraph 2.&lt;&#47;p&gt; <br/>
@@ -32,7 +32,7 @@ Below is the general structure a Javadoc comment should follow.
 > &lt;&#47;ul&gt; <br/>
 > &lt;BLANK LINE&gt; <br/>
 > @param paramName paramDescrption<br/>
-> */
+> &#42&#42
 
 ### Use of space characters
 <a name="#use-of-space-characters"></a>
@@ -395,38 +395,38 @@ In some cases, such as with getters/setters, this is fine, but if it is not imme
 
 **Avoid** - The description below says nothing beyond what you know from reading the method name. The words "set", "tool", "tip", and "text" are simply repeated in a sentence.
 
-> /**<br/>
->  * Sets the tool tip text.<br/>
->  *<br/>
->  * @param text  the text of the tool tip <br/>
->  */ <br/>
+> &#47&#42&#42<br/>
+>  &#42 Sets the tool tip text.<br/>
+>  &#42<br/>
+>  &#42 @param text  the text of the tool tip <br/>
+>  &#42&#47 <br/>
 >  public void setToolTipText(String text) {
 
 **Preferred** - This description more completely defines what a tool tip is, in the larger context of registering and being displayed in response to the cursor.
 
-> /** <br/>
->  * Registers the text to display in a tool tip.   The text <br/> 
->  * displays when the cursor lingers over the component. <br/>
->  * <br/>
->  * @param text  the string to display.  If the text is null, <br/> 
->  * the tool tip is turned off for this component. <br/>
->  */ <br/>
+> &#47&#42&#42 <br/>
+>  &#42 Registers the text to display in a tool tip.   The text <br/> 
+>  &#42 displays when the cursor lingers over the component. <br/>
+>  &#42 <br/>
+>  &#42 @param text  the string to display.  If the text is null, <br/> 
+>  &#42 the tool tip is turned off for this component. <br/>
+>  &#42&#47<br/>
 > public void setToolTipText(String text) {
 
 
 #### Distinguish between constructors ####
 
 Here are two examples:
->    /** <br/>
->     * Constructs a new foo. <br/>
->     */ <br/>
+>    &#47&#42&#42 <br/>
+>     &#42 Constructs a new foo. <br/>
+>     &#42/ <br/>
 >    Foo() { <br/>
 >      ... <br/>
 
  and   
->    /** <br/>
->     * Constructs a new foo with the number of objects to create. <br/>
->     */ <br/>
+>    &#47&#42&#42 <br/>
+>     &#42 Constructs a new foo with the number of objects to create. <br/>
+>     &#42&#47 <br/>
 >    Foo(int n) { <br/>
 
 
@@ -436,17 +436,17 @@ Here are two examples:
 
 - Remember, only the first sentence of the method description shows in the method summary. The remaining sentences (including sentences of the same paragraph following the first sentence) are available in the full length method description.
 
-> /** <br/>
->  * Returns all immediate subfolders of the parent folder. <br/>
->  * ... <br/>
->  */ <br/>
+> &#47&#42&#42 <br/>
+>  &#42 Returns all immediate subfolders of the parent folder. <br/>
+>  &#42 ... <br/>
+>  &#42&#47 <br/>
 > public List&lt;FoldergetFolders&Gt;(long repositoryId, long parentFolderId) <br/>
 
-> /**<br/>
->  * Returns all immediate subfolders of the parent folder, optionally <br/>
->  * including mount folders for third-party repositories. <br/>
->  * .... <br/>
->  */ <br/>
+> &#47&#42&#42<br/>
+>  &#42 Returns all immediate subfolders of the parent folder, optionally <br/>
+>  &#42 including mount folders for third-party repositories. <br/>
+>  &#42 .... <br/>
+>  &#42&#47 <br/>
 > public List&lt;FoldergetFolders&gt;(long repositoryId, long parentFolderId, boolean includeMountFolders) <br/>
 
 
