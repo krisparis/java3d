@@ -100,7 +100,7 @@ step of the simulation is known as the **time step**, denoted as <span style="co
 The first step is to calculate the ball's acceleration and angular acceleration for the current frame.
 
 - <span style="color:red">`A_n`</span> **=** Fe **/** m
-- <span style="color:red">`AA_n`</span> **=** *Torque* **x** M\_I ^(-1)
+- <span style="color:red">`AA_n`</span> **=** M\_I ^(-1) **.** *Torque*
 
 Then the current velocity and angular velocity of the ball can be calculated
 
@@ -109,11 +109,11 @@ Then the current velocity and angular velocity of the ball can be calculated
 
 Finally the next state of the ball can be calculated:
 
-- <span style="color:blue">`V_n+1`</span> = <span style="color:blue">`V_n`</span> + <span style="color:red">`A_n`</span> **x** <span style="color:purple">`TS`</span>
-- <span style="color:green">`D_n+1`</span> = <span style="color:green">`D_n`</span> + <span style="color:blue">`V_n+1`</span> **x** <span style="color:purple">`TS`</span>
+- <span style="color:blue">`V_n+1`</span> **=** <span style="color:blue">`V_n`</span> **+** <span style="color:red">`A_n`</span> **.** <span style="color:purple">`TS`</span>
+- <span style="color:green">`D_n+1`</span> **=** <span style="color:green">`D_n`</span> **+** <span style="color:blue">`V_n+1`</span> **.** <span style="color:purple">`TS`</span>
 
 and
 
-- <span style="color:blue">`AV_n+1`</span> = <span style="color:blue">`AV_n`</span> + <span style="color:red">`AA_n`</span> **x** <span style="color:purple">`TS`</span>
-- <span style="color:green">`O_n+1`</span> = <span style="color:green">`O_n`</span> + <span style="color:blue">`AV_n+1`</span> **x** <span style="color:purple">`TS`</span>
+- <span style="color:blue">`AV_n+1`</span> **=** <span style="color:blue">`AV_n`</span> **+** <span style="color:red">`AA_n`</span> **.** <span style="color:purple">`TS`</span>
+- <span style="color:green">`O_n+1`</span> **=** <span style="color:green">`O_n`</span> **+** <span style="color:blue">`AV_n+1`</span> **.** <span style="color:purple">`TS`</span>
 
