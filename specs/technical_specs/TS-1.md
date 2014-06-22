@@ -1,16 +1,16 @@
 # Technical Specification 1
 
-## Name:
+## Name
 Physics engine
 
-## Objectives:
+## Objectives
 Simulate realistic ball motion 
 
 
-## Physical laws:
+## Physical laws
 
 
-### velocity, displacement and acceleration
+### Velocity, displacement and acceleration
 
 **velocity** <span style="color:blue">`V`</span> is the rate of change of <br/>
 **displacement** <span style="color:green">`D`</span> over time, <br/>
@@ -22,7 +22,7 @@ of velocity over time.
 
 *Note:* velocity, displacement and acceleration are used for describing three-dimensional vectors rather than one-dimensional scalars.
 
-### orientation, angular velocity and angular acceleration
+### Orientation, angular velocity and angular acceleration
 
 Let <span style="color:green">`O`</span>  denote the **orientation** (or angle) of the ball, expressed in radians<br/>
 <span style="color:blue">`AV`</span>  denote the **angular velocity** of the ball <br/>
@@ -35,17 +35,85 @@ Let <span style="color:green">`O`</span>  denote the **orientation** (or angle) 
 
 ### Relation between Force and acceleration
 
-- Fe **=** m **x** <span style="color:red">`A`</span>, where **m** is the mass of the ball and **Fe** the external forces acting on the ball
+- Fe **=** m **.** <span style="color:red">`A`</span>, where **m** is the mass of the ball and **Fe** the external forces acting on the ball
 
 ### Free fall
 
 In the case of a free fall, the **Weight** is the only force acting on the ball. <br/>
 Let **W** denote the weight force.
 
-- W = m x g, where **g** is the standard gravity, which value is 9.81 m/(s)^2
+- W = m **.** g, where **g** is the standard gravity, which value is 9.81 m/(s)^2
 - Since *Fe = W*, we have : 
- - m **x** <span style="color:red">`A`</span> = m **x** g and
+ - m **.** <span style="color:red">`A`</span> = m **x** g and
  -  <span style="color:red">`A`</span> = g = 9.81 m/(s)^2
 
+### Relation between Torque and angular acceleration
 
+- <span style="color:red">`AA_n`</span> **=** *Torque* **.** M\_I ^(-1), where **M\_I** is the Inertia Matrix.
+- *Torque* is the tendency of a force to rotate an object about an axis, fulcrum, or pivot
+
+#### Calculation of Torque
+
+
+
+The value of *Torque* is given by the following equation:
+
+*Torque* = *d\_torque* **x** Fe  **(cross-product of vectors)**, where *d\_torque* is  the displacement vector between the center of gravity of the ball and the surface of the ball
+
+
+
+#### Inertia Matrix
+
+In case of a ball simulated as a solid sphere, the values of the matrix are as shown below:
+
+In this matrix, the value I is such as **I** = [2 x **m** x (**r**)^2] / 5, where **r** is the radius of the sphere and **m** is its mass.
+<table>
+<tr>
+<td> <i>I</i> </td>
+<td> 0 </td>
+<td> 0 </td>
+</tr>
+<tr>
+<td> 0 </td>
+<td> <i>I</i> </td>
+<td> 0 </td>
+</tr>
+<tr>
+<td> 0 </td>
+<td> 0 </td>
+<td> <i>I</i></td>
+</tr>
+</table>
+
+
+## Ball motion simulation
+
+Computers deal with discrete numbers and states; if the simulation
+runs sufficiently quickly then we see these states as continuous movement. For each frame of the simulation, we need to calculate the state of each object (i.e. the velocity and position), based on the
+state of the object in the previous frame.
+
+The amount of simulated time that has elapsed between each
+step of the simulation is known as the **time step**, denoted as <span style="color:purple">`TS`</span>.
+
+### Calculating the next state of the ball
+
+The first step is to calculate the ball's acceleration and angular acceleration for the current frame.
+
+- <span style="color:red">`A_n`</span> **=** Fe **/** m
+- <span style="color:red">`AA_n`</span> **=** *Torque* **x** M\_I ^(-1)
+
+Then the current velocity and angular velocity of the ball can be calculated
+
+- <span style="color:blue">`V_n`</span> = <span style="color:red">`A_n`</span> **.** <span style="color:purple">`TS`</span> **+** <span style="color:blue">`V_n-1`</span>
+- <span style="color:blue">`AV_n`</span> = <span style="color:red">`AA_n`</span> **.** <span style="color:purple">`TS`</span> **+** <span style="color:blue">`AV_n-1`</span>
+
+Finally the next state of the ball can be calculated:
+
+- <span style="color:blue">`V_n+1`</span> = <span style="color:blue">`V_n`</span> + <span style="color:red">`A_n`</span> **x** <span style="color:purple">`TS`</span>
+- <span style="color:green">`D_n+1`</span> = <span style="color:green">`D_n`</span> + <span style="color:blue">`V_n+1`</span> **x** <span style="color:purple">`TS`</span>
+
+and
+
+- <span style="color:blue">`AV_n+1`</span> = <span style="color:blue">`AV_n`</span> + <span style="color:red">`AA_n`</span> **x** <span style="color:purple">`TS`</span>
+- <span style="color:green">`O_n+1`</span> = <span style="color:green">`O_n`</span> + <span style="color:blue">`AV_n+1`</span> **x** <span style="color:purple">`TS`</span>
 
