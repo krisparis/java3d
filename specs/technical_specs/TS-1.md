@@ -97,6 +97,8 @@ step of the simulation is known as the **time step**, denoted as <span style="co
 
 ### Calculating the next state of the ball
 
+#### Failing ball
+
 The first step is to calculate the ball's acceleration and angular acceleration for the current frame.
 
 - <span style="color:red">`A_n`</span> **=** Fe **/** m
@@ -116,4 +118,36 @@ and
 
 - <span style="color:blue">`AV_n+1`</span> **=** <span style="color:blue">`AV_n`</span> **+** <span style="color:red">`AA_n`</span> **.** <span style="color:purple">`TS`</span>
 - <span style="color:green">`O_n+1`</span> **=** <span style="color:green">`O_n`</span> **+** <span style="color:blue">`AV_n+1`</span> **.** <span style="color:purple">`TS`</span>
+
+#### After a rebound
+
+##### Collision detection
+
+###### Sphere - Plane Collision
+
+####### Collision detection equation
+
+Below are the elements of the collision detection equation
+
+*N:* the normal of the plane <br/>
+*S:* the position of the test point <br/>
+*d:* the distance of the plane from the origin
+*r:* the radius of the plane
+
+Consequently, a sphere at position *S* of radius *r*, intersects a plane with normal *N* at distance *d* from the origin if
+
+N**.**S **+** d **<** r
+
+####### Penetration
+
+In case the ball has already penetrated the plane,
+the **penetration** *p* is simply the difference between the radius and the distance between the sphere centre and the plane.
+
+- p = r **-** **(** N **.** S **+** d**)** 
+
+The **contact point** P is calculated by
+taking the sphere position, and adding a vector along the direction of the normal equal to the distance
+between the sphere centre and the plane
+
+- P = S **-** N **.** **(** r **-** p **)**
 
