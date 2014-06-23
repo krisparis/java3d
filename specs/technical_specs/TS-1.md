@@ -119,13 +119,44 @@ and
 - <span style="color:blue">`AV_n+1`</span> **=** <span style="color:blue">`AV_n`</span> **+** <span style="color:red">`AA_n`</span> **.** <span style="color:purple">`TS`</span>
 - <span style="color:green">`O_n+1`</span> **=** <span style="color:green">`O_n`</span> **+** <span style="color:blue">`AV_n+1`</span> **.** <span style="color:purple">`TS`</span>
 
-#### After a rebound
+#### Case of collision
+
+Handling a collision includes to steps:
+
+- Collision detection
+- Collision response
 
 ##### Collision detection
 
-###### Sphere - Plane Collision
+Detecting a collision includes to steps:
 
-####### Collision detection equation
+- Broadphase
+- Narrowphase
+
+###### Broadphase
+
+- Need to test ball collision with other objects
+- Try to avoid useless collision tests
+
+**Space partitioning:** 
+
+- Divide the game world into sections
+- At each simulation frame:
+ - Identify which section each object belongs to
+ - Check any collision between any objects of this section
+
+*Note:* A mobile object can pass through several sections over time.
+
+###### Narrowphase
+
+During the Narrowphase, several algorithms can be used for detecting collision between ojects.
+
+One of these algorithms enable developers to detect collision between a sphere (the ball) and a surface (the ground).
+
+
+####### Sphere - Plane Collision
+
+**Collision detection equation**
 
 Below are the elements of the collision detection equation
 
@@ -138,7 +169,7 @@ Consequently, a sphere at position *S* of radius *r*, intersects a plane with no
 
 N**.**S **+** d **<** r
 
-####### Penetration
+**Penetration**
 
 In case the ball has already penetrated the plane,
 the **penetration** *p* is simply the difference between the radius and the distance between the sphere centre and the plane.
@@ -150,4 +181,7 @@ taking the sphere position, and adding a vector along the direction of the norma
 between the sphere centre and the plane
 
 - P = S **-** N **.** **(** r **-** p **)**
+
+##### Collision response
+
 
