@@ -162,7 +162,7 @@ Below are the elements of the collision detection equation
 
 *N:* the normal of the plane <br/>
 *S:* the position of the test point <br/>
-*d:* the distance of the plane from the origin
+*d:* the distance of the plane from the origin <br/>
 *r:* the radius of the plane
 
 Consequently, a sphere at position *S* of radius *r*, intersects a plane with normal *N* at distance *d* from the origin if
@@ -170,6 +170,8 @@ Consequently, a sphere at position *S* of radius *r*, intersects a plane with no
 N**.**S **+** d **<** r
 
 **Penetration**
+
+![](https://github.com/krisparis/java3d/blob/master/specs/technical_specs/img/TS-1_img/ball_penetration.png)
 
 In case the ball has already penetrated the plane,
 the **penetration** *p* is simply the difference between the radius and the distance between the sphere centre and the plane.
@@ -184,4 +186,10 @@ between the sphere centre and the plane
 
 ##### Collision response
 
+###### Sphere - Plane Collision
+
+**Penetration**
+
+In case the ball has already penetrated another object, the ball should be moved back
+to a previous position where the surface of the ball is in contact with the other object.
 
