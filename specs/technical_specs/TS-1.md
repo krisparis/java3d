@@ -171,7 +171,7 @@ N**.**S **+** d **<** r
 
 **Penetration**
 
-![Ball penetration](https://github.com/krisparis/java3d/blob/master/specs/technical_specs/img/TS-1_img/ball_penetration.png)
+![Ball penetration](https://github.com/krisparis/java3d/blob/master/specs/technical_specs/img/TS-1_img/ball_penetration.png?raw=true)
 
 In case the ball has already penetrated the plane,
 the **penetration** *p* is simply the difference between the radius and the distance between the sphere centre and the plane.
