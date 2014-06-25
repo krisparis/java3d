@@ -151,10 +151,10 @@ Detecting a collision includes to steps:
 
 During the Narrowphase, several algorithms can be used for detecting collision between ojects.
 
-One of these algorithms enable developers to detect collision between a sphere (the ball) and a surface (the ground).
+One of these algorithms enable developers to detect collision between a sphere (the ball) and a plane (the ground).
 
 
-####### Sphere - Plane Collision
+###### Narrowphase : Sphere - Plane Collision
 
 ![Ball penetration](https://github.com/krisparis/java3d/blob/master/specs/technical_specs/img/TS-1_img/ball_penetration.png?raw=true)
 
@@ -191,5 +191,3 @@ taking the sphere position, and adding a vector along the direction of the norma
 between the sphere centre and the plane
 
 - P = S **-** <b><span style="color:black">`N`</span></b> **.** **(** r **-** p **)**
-
-
