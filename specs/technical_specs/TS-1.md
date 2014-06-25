@@ -101,7 +101,7 @@ step of the simulation is known as the **time step**, denoted as <span style="co
 
 The first step is to calculate the ball's acceleration and angular acceleration for the current frame.
 
-- <span style="color:red">`A_n`</span> **=** Fe **/** m
+- <span style="color:red">`A_n>`</span> **=** Fe **/** m
 - <span style="color:red">`AA_n`</span> **=** M\_I ^(-1) **.** *Torque*
 
 Then the current velocity and angular velocity of the ball can be calculated
@@ -156,40 +156,40 @@ One of these algorithms enable developers to detect collision between a sphere (
 
 ####### Sphere - Plane Collision
 
+![Ball penetration](https://github.com/krisparis/java3d/blob/master/specs/technical_specs/img/TS-1_img/ball_penetration.png?raw=true)
+
 **Collision detection equation**
 
 Below are the elements of the collision detection equation
 
-*N:* the normal of the plane <br/>
-*S:* the position of the test point <br/>
-*d:* the distance of the plane from the origin <br/>
+<b><span style="color:black">`N`</span></b>: the normal vector of the plane <br/>
+<b><span style="color:black">`OS`</span></b>: the vector from the origin to the position of the test point <br/>
+<b><span style="color:black">`DO`</span></b>: the vector from the plane tp the origin<br/>
 *r:* the radius of the plane
 
 Consequently, a sphere at position *S* of radius *r*, intersects a plane with normal *N* at distance *d* from the origin if
 
-N**.**S **+** d **<** r
+<b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`OS`</span></b> **+** <b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`DO`</span></b> **<** r
+
+
+By definition of the dot product:
+
+- <b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`OS`</span></b> **+** <b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`DO`</span></b> **=** 1 **x** |OH| **-** 1 **X** |DO| **=** |OH| **-** |DO|, where H is the projection of point S on the line (OD).
+
+In the case of the above diagram, |OH| **-** |DO| corresponds to the length of the segment HD.
+
 
 **Penetration**
-
-![Ball penetration](https://github.com/krisparis/java3d/blob/master/specs/technical_specs/img/TS-1_img/ball_penetration.png?raw=true)
 
 In case the ball has already penetrated the plane,
 the **penetration** *p* is simply the difference between the radius and the distance between the sphere centre and the plane.
 
-- p = r **-** **(** N **.** S **+** d**)** 
+- p = r **-** **(** <b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`OS`</span></b> **+** <b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`DO`</span></b> **)** 
 
 The **contact point** P is calculated by
 taking the sphere position, and adding a vector along the direction of the normal equal to the distance
 between the sphere centre and the plane
 
-- P = S **-** N **.** **(** r **-** p **)**
+- P = S **-** <b><span style="color:black">`N`</span></b> **.** **(** r **-** p **)**
 
-##### Collision response
-
-###### Sphere - Plane Collision
-
-**Penetration**
-
-In case the ball has already penetrated another object, the ball should be moved back
-to a previous position where the surface of the ball is in contact with the other object.
 
