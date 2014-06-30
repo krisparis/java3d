@@ -262,8 +262,8 @@ So:
 
 The velocity along the normal after collision is dependent on the **coefficient of elasticity** *epsilon*.
 
-- <span style="color:blue">`V_n+`</span> **.** <span style="color:black">`n`</span> = *epsilon* **.** <span style="color:blue">`V_n-`</span> **.** <span style="color:black">`n`</span>
-- **(**<span style="color:blue">`V_a+`</span> **-** <span style="color:blue">`V_b+`</span>**)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(**<span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span>**)** **.** <span style="color:black">`n`</span>
+- <span style="color:blue">`Vn+`</span> **.** <span style="color:black">`n`</span> = *epsilon* **.** <span style="color:blue">`Vn-`</span> **.** <span style="color:black">`n`</span>
+- **(**<span style="color:blue">`Va+`</span> **-** <span style="color:blue">`Vb+`</span>**)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(**<span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span>**)** **.** <span style="color:black">`n`</span>
 
 
  A coefficient of 1 means the collision will be purely **elastic**, so all the velocity is transferred, whereas
@@ -272,7 +272,7 @@ bounce so no damping or slowing down occurs.
 
 In the equation:
 
-- **(**<span style="color:blue">`V_a+`</span> **-** <span style="color:blue">`V_b+`</span>**)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(**<span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span>**)** **.** <span style="color:black">`n`</span>
+- **(**<span style="color:blue">`Va+`</span> **-** <span style="color:blue">`Vb+`</span>**)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(**<span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span>**)** **.** <span style="color:black">`n`</span>
 
 Let's sustitute the variables <span style="color:blue">`Va+`</span> and <span style="color:blue">`Vb+`</span> using the following equations:
 
@@ -281,9 +281,9 @@ Let's sustitute the variables <span style="color:blue">`Va+`</span> and <span st
 
 This results in:
 
-- **(** J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **/** Ma + <span style="color:blue">`Va-`</span> **-** J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **/** Mb - <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(**<span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span>**)** **.** <span style="color:black">`n`</span>
-- J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **+** **(** <span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span> **)** **.** <span style="color:blue">`n`</span> **=** *epsilon* **.** **(**<span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span>**)** **.** <span style="color:black">`n`</span>
-- J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span> **)** **.** <span style="color:black">`n`</span>
-- J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span> **)** **.** <span style="color:black">`n`</span> **/** **(** 1 **/** Ma **-** 1 **/** Mb **)**
-- J  **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span> **)** **.** <span style="color:black">`n`</span> **/** **[** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **(** 1 **/** Ma **-** 1 **/** Mb **)** **]**
+- **(** J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **/** Ma + <span style="color:blue">`Va-`</span> **-** J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **/** Mb - <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(**<span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span>**)** **.** <span style="color:black">`n`</span>
+- J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **+** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:blue">`n`</span> **=** *epsilon* **.** **(**<span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span>**)** **.** <span style="color:black">`n`</span>
+- J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span>
+- J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> **/** **(** 1 **/** Ma **-** 1 **/** Mb **)**
+- J  **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> **/** **[** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **(** 1 **/** Ma **-** 1 **/** Mb **)** **]**
 
