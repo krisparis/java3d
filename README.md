@@ -10,16 +10,16 @@
 - **Maven:** Apache Maven 3.2.1
 - **JAVA 3D librairies:** *version*: 1.5.2
 
-*Note:* JAVA 3D librairies were download from the following URL:
+*Note:* JAVA 3D librairies were downloaded from the web page at the following URL:
 https://java3d.java.net/binary-builds.html
 
 ##Project architecture##
 The structure of the directory `game3d/project/` is described below:
 
 - **/batch:** BATCH files to execute commands useful for this project.
--   **/game3d:** The Maven project
--   **/java3d_jars**: JAVA 3D Jar files
--   **/java3d_dlls**: JAVA 3D Dll files
+- **/game3d:** The Maven project
+- **/java3d_jars**: JAVA 3D Jar files
+- **/java3d_dlls**: JAVA 3D Dll files
 
 ##Instructions##
 
