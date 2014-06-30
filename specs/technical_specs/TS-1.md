@@ -220,7 +220,7 @@ The **impulse** method is used for determining post-collision velocities of two 
 This method includes the following steps:
 
 1. Determine the relative pre-collision velocity of the two colliding objects 
-2. Calculate impulse force applied by the two objects on each other
+2. Calculate post-collision linear velocities using momentum
 
 
 *Step 1: Determine the relative pre-collision velocity*
@@ -234,7 +234,7 @@ This method includes the following steps:
 - <span style="color:blue">`Vn-`</span> **=** <span style="color:blue">`Vab-`</span> **.** <span style="color:blue">`n`</span>  **:** Projection of the relative velocity onto normal
 
 
-*Step 2: Calculate impulse force*
+*Step 2: Calculate post-collision linear velocities using momentum*
 
 
 Let's first define the term momentum. <br/>
@@ -285,5 +285,4 @@ This results in:
 - J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **+** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:blue">`n`</span> **=** *epsilon* **.** **(**<span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span>**)** **.** <span style="color:black">`n`</span>
 - J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span>
 - J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> **/** **(** 1 **/** Ma **-** 1 **/** Mb **)**
-- J  **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> **/** **[** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **(** 1 **/** Ma **-** 1 **/** Mb **)** **]**
-
+- J  **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> **/** **[** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **]**
