@@ -162,7 +162,7 @@ One of these algorithms enable developers to detect collision between a sphere (
 
 Below are the elements of the collision detection equation
 
-<b><span style="color:black">`N`</span></b>: the normal vector of the plane <br/>
+<b><span style="color:black">`n`</span></b>: the normal vector of the plane <br/>
 <b><span style="color:black">`OS`</span></b>: the vector from the origin to the position of the test point <br/>
 <b><span style="color:black">`DO`</span></b>: the vector from the plane to the origin<br/>
 *r:* the radius of the plane
@@ -174,7 +174,7 @@ Consequently, a sphere at position *S* of radius *r*, intersects a plane with no
 
 By definition of the dot product:
 
-- <b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`OS`</span></b> **+** <b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`DO`</span></b> **=** 1 **x** |OH| **-** 1 **X** |DO| **=** |OH| **-** |DO|, where H is the projection of point S on the line (OD).
+- <b><span style="color:black">`n`</span></b> **.** <b><span style="color:black">`OS`</span></b> **+** <b><span style="color:black">`n`</span></b> **.** <b><span style="color:black">`DO`</span></b> **=** 1 **x** |OH| **-** 1 **X** |DO| **=** |OH| **-** |DO|, where H is the projection of point S on the line (OD).
 
 In the case of the above diagram, |OH| **-** |DO| corresponds to the length of the segment HD.
 
@@ -184,13 +184,13 @@ In the case of the above diagram, |OH| **-** |DO| corresponds to the length of t
 In case the ball has already penetrated the plane,
 the **penetration** *p* is simply the difference between the radius and the distance between the sphere centre and the plane.
 
-- p = r **-** **(** <b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`OS`</span></b> **+** <b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`DO`</span></b> **)** 
+- p = r **-** **(** <b><span style="color:black">`n`</span></b> **.** <b><span style="color:black">`OS`</span></b> **+** <b><span style="color:black">`n`</span></b> **.** <b><span style="color:black">`DO`</span></b> **)** 
 
 The **contact point** P is calculated by
 taking the sphere position, and adding a vector along the direction of the normal equal to the distance
 between the sphere centre and the plane
 
-- P = S **-** <b><span style="color:black">`N`</span></b> **.** **(** r **-** p **)**
+- P = S **-** <b><span style="color:black">`n`</span></b> **.** **(** r **-** p **)**
 
 
 ##### Collision response
@@ -208,7 +208,7 @@ The collision response includes several steps:
 **Moving the ball back to a previous positon**
 
 In case the ball has already penetrated the plane, the new position of the center of the ball becomes:  <br/>
-S2 = S **-** <b><span style="color:black">`N`</span></b> **.**  p
+S2 = S **-** <b><span style="color:black">`n`</span></b> **.**  p
 
 
 **Calculate collision response**
@@ -286,3 +286,4 @@ This results in:
 - J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span>
 - J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> **/** **(** 1 **/** Ma **-** 1 **/** Mb **)**
 - J  **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> **/** **[** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **]**
+
