@@ -130,8 +130,8 @@ Handling a collision includes to steps:
 
 Detecting a collision includes to steps:
 
-- Broadphase
-- Narrowphase
+1. Broadphase
+2. Narrowphase
 
 ###### Broadphase
 
@@ -149,7 +149,7 @@ Detecting a collision includes to steps:
 
 ###### Narrowphase
 
-During the Narrowphase, several algorithms can be used for detecting collision between ojects.
+During the Narrowphase, several algorithms can be used for detecting collision between objects.
 
 One of these algorithms enable developers to detect collision between a sphere (the ball) and a plane (the ground).
 
@@ -164,10 +164,10 @@ Below are the elements of the collision detection equation
 
 <b><span style="color:black">`N`</span></b>: the normal vector of the plane <br/>
 <b><span style="color:black">`OS`</span></b>: the vector from the origin to the position of the test point <br/>
-<b><span style="color:black">`DO`</span></b>: the vector from the plane tp the origin<br/>
+<b><span style="color:black">`DO`</span></b>: the vector from the plane to the origin<br/>
 *r:* the radius of the plane
 
-Consequently, a sphere at position *S* of radius *r*, intersects a plane with normal *N* at distance *d* from the origin if
+Consequently, a sphere at position *S* of radius *r*, intersects a plane with normal *N* at distance |DO| from the origin if
 
 <b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`OS`</span></b> **+** <b><span style="color:black">`N`</span></b> **.** <b><span style="color:black">`DO`</span></b> **<** r
 
@@ -191,3 +191,99 @@ taking the sphere position, and adding a vector along the direction of the norma
 between the sphere centre and the plane
 
 - P = S **-** <b><span style="color:black">`N`</span></b> **.** **(** r **-** p **)**
+
+
+##### Collision response
+
+The collision response includes several steps:
+
+1. In case the ball collides with another object, the ball is moved back to a previous position that does not intersect with that object.
+2. Then the collision response is calculated
+3. The ball's velocity and position are updated
+
+
+###### Case of Sphere - Plane Collision
+
+
+**Moving the ball back to a previous positon**
+
+In case the ball has already penetrated the plane, the new position of the center of the ball becomes:  <br/>
+S2 = S **-** <b><span style="color:black">`N`</span></b> **.**  p
+
+
+**Calculate collision response**
+
+*Linear collision response*
+
+The **impulse** method is used for determining post-collision velocities of two colliding objects, A and B.
+
+This method includes the following steps:
+
+1. Determine the relative pre-collision velocity of the two colliding objects 
+2. Calculate impulse force applied by the two objects on each other
+
+
+*Step 1: Determine the relative pre-collision velocity*
+
+![Relative pre-collision velocity](https://github.com/krisparis/java3d/blob/master/specs/technical_specs/img/TS-1_img/collision_velocity_vectors.png?raw=true)
+
+- <span style="color:blue">`Va-`</span> **:** Pre-collision velocity of sphere A
+- <span style="color:blue">`Vb-`</span> **:** Pre-collision velocity of sphere B
+- <span style="color:blue">`Vab-`</span> **=** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **:** Relative pre-collision relative velocity of sphere A and B
+- <b><span style="color:black">`n`</span></b> **:** The collision normal (from A to B)
+- <span style="color:blue">`Vn-`</span> **=** <span style="color:blue">`Vab-`</span> **.** <span style="color:blue">`n`</span>  **:** Projection of the relative velocity onto normal
+
+
+*Step 2: Calculate impulse force*
+
+
+Let's first define the term momentum. <br/>
+**Momentum** *p* is defined by the following equation:
+
+- p **=** m **.** <span style="color:blue">`dv`</span>
+- F **=**   dp **/** <span style="color:purple">`dt`</span>, where **F** is the force applied on this object
+and <span style="color:purple">`dt`</span> is a time period 
+
+During the time two objects A and B interact,
+object A exerts the impulse force **J** on object B along the collision normal. By reaction object B exerts an **equal and opposite** force **-J** on object A (from Newton's third law).
+
+- -J  **.** <span style="color:blue">`n`</span> = dp\_a **/** <span style="color:purple">`dt`</span>
+- J  **.** <span style="color:blue">`n`</span> = dp\_b **/** <span style="color:purple">`dt`</span>
+
+The two colliding objects represent an *isolated system*, i.e which is free from the influence of a net external force that alters the momentum of the system. <br/>
+Therefore by the **law of conservation of the momentum**, the total amount of momentum of the collection of objects in the system  **is constant** before the collision as after the collision.
+
+So:
+ 
+- -J  **.** <span style="color:blue">`n`</span> = dp\_a **/** <span style="color:purple">`dt`</span> = - Ma **.** **(** <span style="color:blue">`Va+`</span> - <span style="color:blue">`Va-`</span> **)**
+- J  **.** <span style="color:blue">`n`</span> = dp\_b **/** <span style="color:purple">`dt`</span> = Mb **.** **(** <span style="color:blue">`Vb+`</span> - <span style="color:blue">`Vb-`</span> **)**
+- <span style="color:blue">`Va+`</span> **=** J  **.** <span style="color:blue">`n`</span> **/** Ma + <span style="color:blue">`Va-`</span>
+- <span style="color:blue">`Vb+`</span> **=** J  **.** <span style="color:blue">`n`</span> **/** Mb - <span style="color:blue">`Vb-`</span>
+
+The velocity along the normal after collision is dependent on the **coefficient of elasticity** *epsilon*.
+
+- <span style="color:blue">`V_n+`</span> **.** <span style="color:black">`n`</span> = *epsilon* **.** <span style="color:blue">`V_n-`</span> **.** <span style="color:black">`n`</span>
+- **(**<span style="color:blue">`V_a+`</span> **-** <span style="color:blue">`V_b+`</span>**)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(**<span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span>**)** **.** <span style="color:black">`n`</span>
+
+
+ A coefficient of 1 means the collision will be purely **elastic**, so all the velocity is transferred, whereas
+a coefficient of zero is purely **non-elastic,** so no velocity is transferred. A purely non-elastic collision will result in the two bodies staying together (i.e. no bounce); a purely elastic collision is a perfect
+bounce so no damping or slowing down occurs.
+
+In the equation:
+
+- **(**<span style="color:blue">`V_a+`</span> **-** <span style="color:blue">`V_b+`</span>**)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(**<span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span>**)** **.** <span style="color:black">`n`</span>
+
+Let's sustitute the variables <span style="color:blue">`Va+`</span> and <span style="color:blue">`Vb+`</span> using the following equations:
+
+- <span style="color:blue">`Va+`</span> **=** J  **.** <span style="color:blue">`n`</span> **/** Ma + <span style="color:blue">`Va-`</span>
+- <span style="color:blue">`Vb+`</span> **=** J  **.** <span style="color:blue">`n`</span> **/** Mb - <span style="color:blue">`Vb-`</span>
+
+This results in:
+
+- **(** J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **/** Ma + <span style="color:blue">`Va-`</span> **-** J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **/** Mb - <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(**<span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span>**)** **.** <span style="color:black">`n`</span>
+- J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **+** **(** <span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span> **)** **.** <span style="color:blue">`n`</span> **=** *epsilon* **.** **(**<span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span>**)** **.** <span style="color:black">`n`</span>
+- J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span> **)** **.** <span style="color:black">`n`</span>
+- J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span> **)** **.** <span style="color:black">`n`</span> **/** **(** 1 **/** Ma **-** 1 **/** Mb **)**
+- J  **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`V_a-`</span> **-** <span style="color:blue">`V_b-`</span> **)** **.** <span style="color:black">`n`</span> **/** **[** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **(** 1 **/** Ma **-** 1 **/** Mb **)** **]**
+
