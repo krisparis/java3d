@@ -25,12 +25,12 @@ of velocity over time.
 ### Orientation, angular velocity and angular acceleration
 
 Let <span style="color:green">`O`</span>  denote the **orientation** (or angle) of the ball, expressed in radians<br/>
-<span style="color:blue">`AV`</span>  denote the **angular velocity** of the ball <br/>
+<span style="color:blue">`W`</span>  denote the **angular velocity** of the ball <br/>
 <span style="color:red">`AA`</span>  denote the **angular acceleration** of the ball
 
 - <span style="color:green">`O`</span> = s/r, where **s** is the arc length swept out by the angle <span style="color:green">`O`</span>, and **r** is the radius of the corresponding circle
-- <span style="color:blue">`AV`</span> = d<span style="color:green">`O`</span>/dt
-- <span style="color:red">`AA`</span> = d<span style="color:blue">`AV`</span>/dt
+- <span style="color:blue">`W`</span> = d<span style="color:green">`O`</span>/dt
+- <span style="color:red">`AA`</span> = d<span style="color:blue">`W`</span>/dt
 
 
 ### Relation between Force and acceleration
@@ -40,10 +40,10 @@ Let <span style="color:green">`O`</span>  denote the **orientation** (or angle) 
 ### Free fall
 
 In the case of a free fall, the **Weight** is the only force acting on the ball. <br/>
-Let **W** denote the weight force.
+Let **Wf** denote the weight force.
 
-- W = m **.** g, where **g** is the standard gravity, which value is 9.81 m/(s)^2
-- Since *Fe = W*, we have : 
+- Wf = m **.** g, where **g** is the standard gravity, which value is 9.81 m/(s)^2
+- Since *Fe = Wf*, we have : 
  - m **.** <span style="color:red">`A`</span> = m **x** g and
  -  <span style="color:red">`A`</span> = g = 9.81 m/(s)^2
 
@@ -107,7 +107,7 @@ The first step is to calculate the ball's acceleration and angular acceleration 
 Then the current velocity and angular velocity of the ball can be calculated
 
 - <span style="color:blue">`V_n`</span> = <span style="color:red">`A_n`</span> **.** <span style="color:purple">`TS`</span> **+** <span style="color:blue">`V_n-1`</span>
-- <span style="color:blue">`AV_n`</span> = <span style="color:red">`AA_n`</span> **.** <span style="color:purple">`TS`</span> **+** <span style="color:blue">`AV_n-1`</span>
+- <span style="color:blue">`W_n`</span> = <span style="color:red">`AA_n`</span> **.** <span style="color:purple">`TS`</span> **+** <span style="color:blue">`W_n-1`</span>
 
 Finally the next state of the ball can be calculated:
 
@@ -116,8 +116,8 @@ Finally the next state of the ball can be calculated:
 
 and
 
-- <span style="color:blue">`AV_n+1`</span> **=** <span style="color:blue">`AV_n`</span> **+** <span style="color:red">`AA_n`</span> **.** <span style="color:purple">`TS`</span>
-- <span style="color:green">`O_n+1`</span> **=** <span style="color:green">`O_n`</span> **+** <span style="color:blue">`AV_n+1`</span> **.** <span style="color:purple">`TS`</span>
+- <span style="color:blue">`W_n+1`</span> **=** <span style="color:blue">`W_n`</span> **+** <span style="color:red">`AA_n`</span> **.** <span style="color:purple">`TS`</span>
+- <span style="color:green">`O_n+1`</span> **=** <span style="color:green">`O_n`</span> **+** <span style="color:blue">`W_n+1`</span> **.** <span style="color:purple">`TS`</span>
 
 #### Case of collision
 
@@ -255,10 +255,10 @@ Therefore by the **law of conservation of the momentum**, the total amount of mo
 
 So:
  
-- -J  **.** <span style="color:blue">`n`</span> = dp\_a **/** <span style="color:purple">`dt`</span> = - Ma **.** **(** <span style="color:blue">`Va+`</span> - <span style="color:blue">`Va-`</span> **)**
-- J  **.** <span style="color:blue">`n`</span> = dp\_b **/** <span style="color:purple">`dt`</span> = Mb **.** **(** <span style="color:blue">`Vb+`</span> - <span style="color:blue">`Vb-`</span> **)**
-- <span style="color:blue">`Va+`</span> **=** J  **.** <span style="color:blue">`n`</span> **/** Ma + <span style="color:blue">`Va-`</span>
-- <span style="color:blue">`Vb+`</span> **=** J  **.** <span style="color:blue">`n`</span> **/** Mb - <span style="color:blue">`Vb-`</span>
+- -J  **.** <span style="color:blue">`n`</span> = dp\_a **/** <span style="color:purple">`dt`</span> = - Ma **.** **(** <span style="color:blue">`Va+`</span> - <span style="color:blue">`Va-`</span> **)** **/** <span style="color:purple">`dt`</span>
+- J  **.** <span style="color:blue">`n`</span> = dp\_b **/** <span style="color:purple">`dt`</span> = Mb **.** **(** <span style="color:blue">`Vb+`</span> - <span style="color:blue">`Vb-`</span> **)** **/** <span style="color:purple">`dt`</span>
+- **So** <span style="color:blue">`Va+`</span> **=** J  **.** <span style="color:blue">`n`</span> **/** Ma + <span style="color:blue">`Va-`</span>
+- **So** <span style="color:blue">`Vb+`</span> **=** J  **.** <span style="color:blue">`n`</span> **/** Mb - <span style="color:blue">`Vb-`</span>
 
 The velocity along the normal after collision is dependent on the **coefficient of elasticity** *epsilon*.
 
@@ -287,3 +287,72 @@ This results in:
 - J  **.** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> **/** **(** 1 **/** Ma **-** 1 **/** Mb **)**
 - J  **=** **(**-1 **+** *epsilon* **)** **(** <span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span> **)** **.** <span style="color:black">`n`</span> **/** **[** <span style="color:blue">`n`</span> **.** <span style="color:blue">`n`</span> **.** **(** 1 **/** Ma **-** 1 **/** Mb **)** **]**
 
+*Step 3: Calculate post-collision angular velocities using momentum*
+
+![Relative pre-collision velocity](https://github.com/krisparis/java3d/blob/master/specs/technical_specs/img/TS-1_img/collision_angular_velocity_vectors.png?raw=true)
+
+If angular motion is taken into account when calculating collision response, then the velocity 
+of the actual contact points on each object should be calculated.
+
+For two objects A and B:
+
+- <span style="color:blue">`Wa-`</span> : the angular velocity vector of the contact point of object A 
+- <span style="color:blue">`Ra`</span> : the vector from the centre of object A to its contact point
+- <span style="color:blue">`Wb-`</span> : the angular velocity vector of the contact point of object B
+- <span style="color:blue">`Rb`</span> : the vector from the centre of object B to its contact point
+
+The pre-collision velocities of the two objects at their contact points are given by the following equations:
+
+- <span style="color:blue">`VCa-`</span> **=** <span style="color:blue">`Va-`</span> **+** <span style="color:blue">`Wa-`</span> **x** <span style="color:blue">`Ra`</span>
+- <span style="color:blue">`VCb-`</span> **=** <span style="color:blue">`Vb-`</span> **+** <span style="color:blue">`Wb-`</span> **x**  <span style="color:blue">`Rb`</span>
+
+
+Let's first define the term angular momentum. <br/>
+**Angular Momentum** *L* is defined by the following equation:
+
+- L **=** M\_I **.** <span style="color:blue">`W`</span>
+- *Torque* **=** d_torque x F **=**   M\_I  **.** <span style="color:red">`AA`</span> **=**  M\_I **.** d<span style="color:blue">`W`</span> **/** <span style="color:purple">`dt`</span>,
+where <span style="color:purple">`dt`</span> is a time period
+- **So** d_torque x F **=**  M\_I **.** d<span style="color:blue">`W`</span> **/** <span style="color:purple">`dt`</span>
+
+During the time two objects A and B interact,
+object A exerts the impulse force **J** on object B along the collision normal. By reaction object B exerts an **equal and opposite** force **-J** on object A (from Newton's third law).
+
+- d\_torque **x** -J  **.** <span style="color:blue">`n`</span> **=** <span style="color:blue">`Ra`</span> **x** -J  **.** <span style="color:blue">`n`</span> **=** M\_I **.** d<span style="color:blue">`W`</span> **/** <span style="color:purple">`dt`</span>
+- d\_torque **x** J  **.** <span style="color:blue">`n`</span> **=** <span style="color:blue">`Rb`</span> **x** J  **.** <span style="color:blue">`n`</span> **=** M\_I **.** d<span style="color:blue">`W`</span> **/** <span style="color:purple">`dt`</span>
+
+The two colliding objects represent an *isolated system*, i.e which is free from the influence of a net external force that alters the momentum of the system. <br/>
+Therefore by the **law of conservation of the momentum**, the total amount of momentum of the collection of objects in the system  **is constant** before the collision as after the collision.
+
+Therefore:
+
+- <span style="color:blue">`Ra`</span> **x** -J  **.** <span style="color:blue">`n`</span> **=** M\_I **.** d<span style="color:blue">`W`</span> **/** <span style="color:purple">`dt`</span> **=** M\_I **.** **(** <span style="color:blue">`Wa+`</span> **-** <span style="color:blue">`Wa-`</span> **)** **/** <span style="color:purple">`dt`</span>
+- <span style="color:blue">`Rb`</span> **x** J  **.** <span style="color:blue">`n`</span> **=** M\_I **.** d<span style="color:blue">`W`</span> **/** <span style="color:purple">`dt`</span> **=** M\_I **.** **(** <span style="color:blue">`Wb+`</span> **-** <span style="color:blue">`Wb-`</span> **)** **/** <span style="color:purple">`dt`</span>
+- **So** <span style="color:blue">`Wa+`</span> **=**  <span style="color:blue">`Wa-`</span> **-**  M\_I^(-1) **.** <span style="color:blue">`Ra`</span> **x** -J **.** <span style="color:blue">`n`</span>
+- **So** <span style="color:blue">`Wb+`</span> **=** <span style="color:blue">`Wb-`</span> **+** M\_I^(-1) **.** <span style="color:blue">`Rb`</span> **x** J  **.** <span style="color:blue">`n`</span> 
+
+
+
+In the equation:
+
+- **(**<span style="color:blue">`Va+`</span> **-** <span style="color:blue">`Vb+`</span>**)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(**<span style="color:blue">`Va-`</span> **-** <span style="color:blue">`Vb-`</span>**)** **.** <span style="color:black">`n`</span>
+
+
+Let's replace the variables <span style="color:blue">`Va+`</span> and <span style="color:blue">`Vb+`</span> with the variables <span style="color:blue">`VCa+`</span> and <span style="color:blue">`VCb+`</span> respectively:
+
+- **(**<span style="color:blue">`VCa+`</span> **-** <span style="color:blue">`VCb+`</span>**)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(**<span style="color:blue">`VCa-`</span> **-** <span style="color:blue">`VCb-`</span>**)** **.** <span style="color:black">`n`</span>
+
+Let's sustitute the variables <span style="color:blue">`VCa+`</span>, <span style="color:blue">`VCa+`</span>, <span style="color:blue">`VCb+`</span> and <span style="color:blue">`VCb-`</span> using the following equations:
+
+- <span style="color:blue">`VCa+`</span> **=** <span style="color:blue">`Va+`</span> **+** <span style="color:blue">`Wa+`</span> **x** <span style="color:blue">`Ra`</span>
+- <span style="color:blue">`VCb+`</span> **=** <span style="color:blue">`Vb+`</span> **+** <span style="color:blue">`Wb+`</span> **x**  <span style="color:blue">`Rb`</span>
+- <span style="color:blue">`VCa-`</span> **=** <span style="color:blue">`Va-`</span> **+** <span style="color:blue">`Wa-`</span> **x** <span style="color:blue">`Ra`</span>
+- <span style="color:blue">`VCb-`</span> **=** <span style="color:blue">`Vb-`</span> **+** <span style="color:blue">`Wb-`</span> **x**  <span style="color:blue">`Rb`</span>
+
+This results in:
+
+(DRAFT)
+
+- **(** <span style="color:blue">`Va+`</span> **+** <span style="color:blue">`Wa+`</span> **x** <span style="color:blue">`Ra`</span> **-** <span style="color:blue">`Vb+`</span> **+** <span style="color:blue">`Wb+`</span> **x**  <span style="color:blue">`Rb`</span> **)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(** <span style="color:blue">`Va-`</span> **+** <span style="color:blue">`Wa-`</span> **x** <span style="color:blue">`Ra`</span> **-** <span style="color:blue">`Vb-`</span> **+** <span style="color:blue">`Wb-`</span> **x**  <span style="color:blue">`Rb`</span> **)** **.** <span style="color:black">`n`</span>
+- **(** J  **.** <span style="color:blue">`n`</span> **/** Ma + <span style="color:blue">`Va-`</span> **+** <span style="color:blue">`Wa+`</span> **x** <span style="color:blue">`Ra`</span> **-** J  **.** <span style="color:blue">`n`</span> **/** Mb - <span style="color:blue">`Vb-`</span> **+** <span style="color:blue">`Wb+`</span> **x**  <span style="color:blue">`Rb`</span> **)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(** <span style="color:blue">`Va-`</span> **+** <span style="color:blue">`Wa-`</span> **x** <span style="color:blue">`Ra`</span> **-** <span style="color:blue">`Vb-`</span> **+** <span style="color:blue">`Wb-`</span> **x**  <span style="color:blue">`Rb`</span> **)** **.** <span style="color:black">`n`</span> **,** *(substitution of <span style="color:blue">`Va+`</span> and <span style="color:blue">`Vb+`</span>)*
+- **(** J  **.** <span style="color:blue">`n`</span> **/** Ma + <span style="color:blue">`Va-`</span> **+** **(** <span style="color:blue">`Wa-`</span> **-**  M\_I^(-1) **.** <span style="color:blue">`Ra`</span> **x** -J **.** <span style="color:blue">`n`</span> **)** **x** <span style="color:blue">`Ra`</span> **-** J  **.** <span style="color:blue">`n`</span> **/** Mb - <span style="color:blue">`Vb-`</span> **+** **(** <span style="color:blue">`Wb-`</span> **+** M\_I^(-1) **.** <span style="color:blue">`Rb`</span> **x** J  **.** <span style="color:blue">`n`</span>  **)** **x**  <span style="color:blue">`Rb`</span> **)** **.** <span style="color:black">`n`</span> = *epsilon* **.** **(** <span style="color:blue">`Va-`</span> **+** <span style="color:blue">`Wa-`</span> **x** <span style="color:blue">`Ra`</span> **-** <span style="color:blue">`Vb-`</span> **+** <span style="color:blue">`Wb-`</span> **x**  <span style="color:blue">`Rb`</span> **)** **.** <span style="color:black">`n`</span>
